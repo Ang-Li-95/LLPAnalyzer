@@ -1,0 +1,17 @@
+<lcgdict>
+ <class name="DVAna::UnpackedCandidateTracksMap"/>
+ <class name="DVAna::TrackRefPair"/>
+ <class name="DVAna::RescaledTrackMap"/>
+ <class name="std::pair<const edm::Ptr<reco::Candidate>,edm::Ref<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> > >"/>
+ <class name="std::map<edm::Ptr<reco::Candidate>,edm::Ref<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> > >"/>
+ <class name="std::pair<const edm::Ref<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> >,edm::Ref<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> > >"/>
+ <class name="edm::Wrapper<DVAna::UnpackedCandidateTracksMap>"/>
+ <class name="edm::Wrapper<DVAna::RescaledTrackMap>"/>
+ <class name="edm::helpers::KeyVal<edm::RefProd<std::vector<reco::Vertex> >,
+                      edm::RefProd<std::vector<reco::Track> > >" />
+ <class name="edm::AssociationMap<edm::OneToMany<std::vector<reco::Vertex>, 
+                      std::vector<reco::Track>, unsigned int > >">
+   <field name="transientMap_" transient="true" />
+ </class>
+ <class name="edm::Wrapper<edm::AssociationMap<edm::OneToMany<std::vector<reco::Vertex>,std::vector<reco::Track>, unsigned int > > >"/>
+</lcgdict>
