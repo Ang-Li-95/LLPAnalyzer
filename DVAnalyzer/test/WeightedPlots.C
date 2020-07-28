@@ -70,6 +70,7 @@ void AddPlots2D(TFile* fQCD[4], double lumiScale[4], TFile* fsig, double sigLumi
 void WeightedPlots()
 {
   gStyle->SetOptStat(0); 
+  const double lumi = 41.5;
   const TString signame = "ggToNN_800M_1mm.root";
   const TString QCD[4] = {"QCD_HT700to1000.root",
                     "QCD_HT1000to1500.root",
@@ -81,12 +82,12 @@ void WeightedPlots()
                             "TTJets_HT1200To2500.root",
                             "TTJets_HT2500ToInf"
   };
-  const int Events_QCD[4] = {48158738, 15466225, 10955087, 5475677};
+  const int Events_QCD[4] = {47724800, 16595628, 11634434, 5941306};
   const double crossSection[4] = {6.4e+06, 1.1e+06, 9.9e+04, 2.0e+04};
 
-  const int Events_TTJets[4] = {14149394, 10372802, 2779427, 1451104};
+  const int Events_TTJets[4] = {81507662, 40187347, 13214871, 5155687};
   const double crossSection_TTJets[4] = {1.8e+03, 0.75e+03, 0.13e+03, 1.41};
-  const double sigLumiScale = 101.0/100000;
+  const double sigLumiScale = lumi/100000;
 
   TFile* fsig = new TFile(signame);
   TFile* f[4];
@@ -94,7 +95,7 @@ void WeightedPlots()
   double scaleFactor[4];
   for (int i =0;i<4;++i){
     f[i] = new TFile(QCD[i]);
-    scaleFactor[i] = lumiScale(Events_QCD[i], crossSection[i]);
+    scaleFactor[i] = lumiScale(Events_QCD[i], crossSection[i], lumi);
   }
 
   //make1DPlot(f, scaleFactor, "vtx_tkSize");
