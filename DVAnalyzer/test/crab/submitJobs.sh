@@ -1,0 +1,9 @@
+crab submit -c ggToNN_M800_1mm.py General.workArea={$1}
+crab submit -c QCD700to1000.py General.workArea={$1}
+crab submit -c QCD1000to1500.py General.workArea={$1}
+crab submit -c QCD1500to2000.py General.workArea={$1}
+crab submit -c QCD2000toInf.py General.workArea={$1}
+crab submit -c TTJets600To800.py General.workArea={$1}
+crab submit -c TTJets800To1200.py General.workArea={$1}
+crab submit -c TTJets1200To2500.py General.workArea={$1}
+crab submit -c TTJets2500ToInf.py General.workArea={$1}
