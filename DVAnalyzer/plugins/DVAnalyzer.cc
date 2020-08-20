@@ -270,6 +270,10 @@ DVAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     std::cout << "****Error in getting TriggerResults product from Event!" << std::endl;
     return;
   }
+  //auto trigNames = hltConfig_.triggerNames();
+  //for (auto& tName:trigNames){
+  //  std::cout << tName << std::endl;
+  //}
 
   assert(triggerResultsHandle_->size()==hltConfig_.size());
   const unsigned int ntrigs(hltConfig_.size());

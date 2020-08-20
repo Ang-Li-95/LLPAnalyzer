@@ -22,7 +22,7 @@ void make1DPlot(TFile* f[4], double lumiScale[4],TString name)
   c->SetLogy();
 }
 
-void make1DStackPlot(TFile* f[4], double lumiScale[4], TFile* fsig, double sigLumiScale, TString name)
+THStack* make1DStackPlot(TFile* f[4], double lumiScale[4], TFile* fsig, double sigLumiScale, TString name)
 {
   const TString l[4] = {"QCD_HT700to1000","QCD_HT1000to1500","QCD_HT1500to2000","QCD_HT2000toInf"};
   TCanvas *c = new TCanvas("cs_"+name, "cs_"+name, 600, 600);
@@ -51,6 +51,8 @@ void make1DStackPlot(TFile* f[4], double lumiScale[4], TFile* fsig, double sigLu
   legend->AddEntry(h,"signal");
   c->SetLogy();
   legend->Draw();
+  
+  return hs;
 }
 
 void AddPlots2D(TFile* fQCD[4], double lumiScale[4], TFile* fsig, double sigLumiScale, TString name)
@@ -102,9 +104,9 @@ void WeightedPlots()
   //make1DPlot(f, scaleFactor, "vtx_dBV");
   //make1DPlot(f, scaleFactor, "vtx_sigma_dBV");
 
-  make1DStackPlot(f, scaleFactor, fsig, sigLumiScale, "vtx_tkSize");
-  make1DStackPlot(f, scaleFactor, fsig, sigLumiScale, "vtx_dBV");
-  make1DStackPlot(f, scaleFactor, fsig, sigLumiScale, "vtx_sigma_dBV");
+  auto* hs1 = make1DStackPlot(f, scaleFactor, fsig, sigLumiScale, "vtx_tkSize");
+  auto* hs2 = make1DStackPlot(f, scaleFactor, fsig, sigLumiScale, "vtx_dBV");
+  auto* hs3 = make1DStackPlot(f, scaleFactor, fsig, sigLumiScale, "vtx_sigma_dBV");
   AddPlots2D(f, scaleFactor, fsig, sigLumiScale, "vtx_xy");
 
 }

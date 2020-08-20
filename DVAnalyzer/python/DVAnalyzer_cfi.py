@@ -12,6 +12,6 @@ DVAnalyzer = cms.EDAnalyzer('DVAnalyzer',
                       trackAssoTag = cms.untracked.InputTag("prod"),
                       triggerTag = cms.untracked.InputTag("TriggerResults", "", "HLT"),
                       processName = cms.untracked.string("HLT"),
-                      triggerNameTag = cms.untracked.string("HLT_PFHT1050_v18"),
+                      triggerNameTag = cms.untracked.string("HLT_PFHT1050_v14"),
                       debug = cms.untracked.bool(False),
                     )

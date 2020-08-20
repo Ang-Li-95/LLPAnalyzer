@@ -68,15 +68,15 @@ for ievt,evt in enumerate(chain):
       continue
       #print("tkSize=0: {}".format(ievt))
       #print(evt.evt)
-    if(x*x+y*y<2.09 and dBV>0.01 and sigma_dBV<0.0025):
+    if(x*x+y*y<4.3681 and dBV>0.01 and sigma_dBV<0.0025):
       histos["vtx_tkSize"].Fill(tkSize)
     if(tkSize>=5 and dBV>0.01 and sigma_dBV<0.0025):
       histos["vtx_xy"].Fill(x, y)
-    if(tkSize>=5 and x*x+y*y<2.09 and sigma_dBV<0.0025):
+    if(tkSize>=5 and x*x+y*y<4.3681 and sigma_dBV<0.0025):
       histos["vtx_dBV"].Fill(dBV)
-    if(tkSize>=5 and x*x+y*y<2.09 and dBV>0.01):
+    if(tkSize>=5 and x*x+y*y<4.3681 and dBV>0.01):
       histos["vtx_sigma_dBV"].Fill(sigma_dBV)
-    if(tkSize>=5 and x*x+y*y<2.09 and dBV>0.01 and sigma_dBV<0.0025):
+    if(tkSize>=5 and x*x+y*y<4.3681 and dBV>0.01 and sigma_dBV<0.0025):
       nVtx += 1
   histos["nvtx_per_event"].Fill(nVtx)
     #histos["vtx_sigma_dBV"].Fill(evt.vtx_sigma_dBV[iv])
